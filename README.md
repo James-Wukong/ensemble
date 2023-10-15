@@ -20,3 +20,10 @@ In a nutshell, these two meta-algorithms differ on how they create and aggregate
 ## stacking
 
 Stacking mainly differ from bagging and boosting on two points : - First stacking often considers heterogeneous weak learners (different learning algorithms are combined) whereas bagging and boosting consider mainly homogeneous weak learners. - Second, stacking learns to combine the base models using a meta-model whereas bagging and boosting combine weak learners following deterministic algorithms.
+
+So, assume that we want to fit a stacking ensemble composed of L weak learners. Then we have
+to follow the steps thereafter:
+- -split the training data in two folds
+- choose L weak learners and fit them to data of the first fold
+- for each of the L weak learners, make predictions for observations in the second fold
+- fit the meta-model on the second fold, using predictions made by the weak learners as inputs
