@@ -24,7 +24,7 @@ n_scores = cross_val_score(model, X, y, scoring='accuracy', cv=cv, n_jobs=-1, er
 print('Accuracy: %.3f (%.3f)' % (np.mean(n_scores), np.std(n_scores)))
 
 # fit the model on the whole dataset
-model = GradientBoostingClassifier()
+# model = GradientBoostingClassifier()
 model.fit(X, y)
 # make a single prediction
 row = [[2.56999479, -0.13019997, 3.16075093, -4.35936352, -1.61271951, -1.39352057, -2.48924933, -1.93094078, 3.26130366, 2.05692145]]
@@ -39,7 +39,7 @@ n_scores = cross_val_score(model, X, y, scoring='neg_mean_absolute_error', cv=cv
 print('MAE: %.3f (%.3f)' % (np.mean(n_scores), np.std(n_scores)))
 
 # fit the model on the whole dataset
-model = GradientBoostingRegressor()
+# model = GradientBoostingRegressor()
 model.fit(X, y)
 # make a single prediction
 row = [[2.02220122, 0.31563495, 0.82797464, -0.30620401, 0.16003707, -1.44411381, 0.87616892, -0.50446586, 0.23009474, 0.76201118]]
